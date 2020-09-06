@@ -1,0 +1,108 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Cadastrar Cliente";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="content">
+        <form id="FrmCadastroCli" method="post">
+            <header class="content-header">
+                <h2>Cadastrar cliente</h2>
+                <ol class="breadcrumb">
+                    <li class="active">Cliente</li>
+                </ol>
+            </header>
+            <article class="content">
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Nome</label>
+                                            <input type="text" name="nome" id="nomeCli" class="form-control cli" maxlength="50" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>CPF</label>
+                                            <input type="text" name="cpf" id="cpfCli" class="form-control cpf cli" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Idade</label>
+                                            <input type="text" name="idade" id="idadeCli" class="form-control cli" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Telefone</label>
+                                            <input type="text" name="tel" id="telCli" class="form-control tel cli" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>E-mail</label>
+                                            <input type="text" name="email" id="emailCli" class="form-control cli" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Cep</label>
+                                            <input type="text" name="cep" id="cepCli" class="form-control cep cli" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Numero</label>
+                                            <input type="text" name="numeroCli" id="numCli" class="form-control cli" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group" style="float:right">
+                                        <div class="col-sm-12">
+                                            <a class="btn btn_cancelar" id="btn_cancelar" style="background-color: #dfdcd8;margin-right:15px" href="@Url.Action("Index","Home")"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancelar</a>
+                                            <a class="btn btn-success" id="btn_salvarCli"><i class="glyphicon glyphicon-ok"></i>&nbsp; Salvar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/cdn/font-awesome/css/font-awesome.css")
+    @Styles.Render("~/cdn/ionicons/css/ionicons.css")
+    @Styles.Render("~/cdn/bootstrap/css/bootstrap.css")
+    @Styles.Render("~/cdn/bootstrap-datepicker/css/bootstrap-datepicker.css")
+    @Styles.Render("~/cdn/bootstrap-timepicker/css/bootstrap-timepicker.css")
+    @Styles.Render("~/cdn/croppie/css/croppie.css")
+    @Styles.Render("~/Content/AdminLTE.css")
+    @Styles.Render("~/Content/skins/_all-skins.css")
+    @Styles.Render("~/Content/fix.css")
+    @Scripts.Render("~/cdn/jquery/jquery.js")
+    @Scripts.Render("~/cdn/bootstrap/bootstrap.js")
+    @Scripts.Render("~/cdn/bootstrap-datepicker/bootstrap-datepicker.js")
+    @Scripts.Render("~/cdn/bootstrap-datepicker/i18n/bootstrap-datepicker.pt-BR.js")
+    @Scripts.Render("~/cdn/bootstrap-timepicker/bootstrap-timepicker.js")
+    @Scripts.Render("~/cdn/inputmask/inputmask.js")
+    @Scripts.Render("~/cdn/inputmask/inputmask.numeric.extensions.js")
+    @Scripts.Render("~/cdn/jquery.mask/jquery.mask.js")
+    @Scripts.Render("~/cdn/app.js")
+    @Scripts.Render("~/scripts/default.js")
+    @Scripts.Render("~/scripts/all.js")
+    @Scripts.Render("~/scripts/jquery.noty.min.js")
+    @*@RenderSection("scripts", required: false)*@
+
+    <script type="text/javascript">
+        $(function () {
+            $('#camada').hide();
+        });
+    </script>
+    <style>
+        #camada {
+            min-height: 100%;
+            height: auto;
+            width: 100%;
+            background-image: url(img/fundo.png);
+            position: fixed;
+            z-index: 1000;
+        }
+
+        #carregando {
+            width: 200px;
+            height: 100px;
+            top: 60%;
+            left: 50%;
+            margin-top: -10%;
+            margin-left: -5%;
+            position: absolute;
+            z-index: 1001;
+        }
+
+        h4 {
+            color: #585858;
+            background-color: #E6E6E6;
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+
+        .col-centered {
+            float: none;
+            margin-left: 16%;
+        }
+    </style>
+
+</head>
+<body class="hold-transition skin-yellow sidebar-mini body">
+    <div id="camada"><div id="carregando"><img src="../img/ajax-loader.gif" alt="Carregando ..." /></div></div>
+    <div class="wrapper">
+        <input id="nfe_manual" type="hidden" value="0" />
+        <header class="main-header">
+            <h1 class="hidden">Sistema</h1>
+            <a title="Painel de Controle" class="logo" href="@Url.Action("Index","Home")">
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a title="Menu" href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown messages-menu">
+                        </li>
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i> @*ADICIONADO PARA VER O CAMPO DE LOGIN*@
+                                <span class="hidden-xs">@ViewBag.Usuario.Nome@*NOME DO USUARIO*@</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="../img/avatar90.png" class="user-image" />
+                                    <p>
+                                        @ViewBag.Usuario.Nome
+                                    </p>
+                                </li>
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a title="Sair" href="#" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> &nbsp;Sair</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <h2 class="hidden">Acesso &agrave;s Fun&ccedil;&otilde;es do Sistema</h2>
+            <div class="sidebar" style="padding-bottom:  0;">
+                <article class="user-panel">
+                    <h3 class="hidden">Usu&aacute;rio</h3>
+                    <div class="pull-left image">
+                        <img title="usuario" alt="usuario" src="../img/avatar45.png" class="user-image img-circle" />
+                    </div>
+                    <div class="pull-left info">
+                        <p>@ViewBag.Usuario.Nome</p>
+                        <a title="Sair" href="#"><i class="fa fa-sign-out"></i> Sair</a>
+                    </div>
+                </article>
+            </div>
+            <section class="sidebar" id="sidebar1">
+                @*<h3 class="hidden">Menu</h3>*@
+                <ul class="sidebar-menu">
+                    <li class="header">MENU</li>
+                    <li class="treeview">
+                        <a title="Cadastros" href="#"><i class="glyphicon glyphicon-plus"></i> <span>Cadastros</span><i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a title="Cadastrar filme" href="@Url.Action("CadastroFilme","Home")"><i class="glyphicon glyphicon-film"></i> <span>Cadastrar filme</span></a></li>
+                            <li><a title="Cadastrar cliente" href="@Url.Action("CadastroCliente","Home")"><i class="glyphicon glyphicon-user"></i> <span>Cadastrar cliente</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a title="A&ccedil;&otilde;es" href="#"><i class="glyphicon glyphicon-edit"></i> <span>A&ccedil;&otilde;es</span><i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Locar","Home")"><i class="glyphicon glyphicon-log-in"></i> <span>Locar</span></a></li>
+                            <li><a href="@Url.Action("Devolver","Home")"><i class="	glyphicon glyphicon-log-out"></i> <span>Devolver</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <main class="content-wrapper ifr">
+            @RenderBody()
+        </main>
+    </div>
+</body>
+</html>

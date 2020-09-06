@@ -1,0 +1,43 @@
+
+
+CADASTROS:
+
+	-filme (tb_Filme)[colocar como readonly Ativado e na hora de locar inativar ele]
+	-locador (tb_Cliente) [*]
+
+AÇÕES(tb_Locacao):
+
+	-locar um filme[**]
+	-devolução do filme[***]
+
+----------------------------
+
+[OK]- *cliente não pode se repetir (na hora de criar verificar o nome e o cpf e ver se ja é existente)[ValidarCliente] 
+
+- na tabela de visualizações não ira poder excluir registros diversos
+
+- ** menu "locar" não trazer os filmes que estão com status Inativos
+
+- *** mostrar o tempo de atraso em que o objeto se encontra
+
+AZURE------------------------------
+
+email: zuzumebachisilver@gmail.com
+senha: camilateste2020
+
+SERVIDOR:
+
+serverexpressrace.database.windows.net
+
+NOME: SQLtest
+USUARIO: camila_teste
+SENHA: Powerfull@1331
+
+----------------------------------------------------------------------------------
+
+https://localhost:44341/
+
+
+----------------------------------
+
+    
