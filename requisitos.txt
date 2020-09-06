@@ -8,7 +8,7 @@ CADASTROS:
 AÇÕES(tb_Locacao):
 
 	-locar um filme[**]
-	-devolução do filme[***]
+	-devolução do filme (table locacao c/btn para devolver)[***]
 
 ----------------------------
 

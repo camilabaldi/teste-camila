@@ -51,6 +51,17 @@ namespace Locadora.Controllers
             return Json(MessageBox.Noty("Cliente cadastrado com sucesso!", MessageBox.SUCESS, false, "2000"), JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult CadastrarFil(string nome, string autor, int ano)
+        {
+            //instancia a conexão
+            Conn conexao = new Conn();
+
+            // inserindo no BD
+            conexao.retornaQuery("insert into Filme values('" + nome + "', '" + autor + "', '" + ano + "', 0)");
+
+            return Json(MessageBox.Noty("Filme cadastrado com sucesso!", MessageBox.SUCESS, false, "2000"), JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult ValidarCli(string nome, string cpf)
         {
 

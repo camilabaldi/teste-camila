@@ -10,6 +10,36 @@ $(document).ready(function () {
         ValidarCliente();
         loaded();
     });
+
+    $(document).on('click', '#btn_salvarFil', function () {
+        $.ajax({
+            url: urlBase + 'Helpers/CadastrarFil/',
+            type: 'POST',
+            datatype: 'application/json',
+            data: {
+                nome: $("#nomeFil").val(), autor: $("#autFil").val(), ano: $("#anoFil").val()
+            },
+            success: function (data) {
+                if (data.text == "Filme cadastrado com sucesso!") {
+                    var exibeScs = data.text;
+                    Sucesso(exibeScs);
+
+                    //limpa form
+                    $(".fil").val('');
+
+                } else if (data != "") {
+                    var exibe = data.text;
+                    Erro(exibe);
+
+                } else {
+                    console.log("Não retornou nenhum objeto da f(x)Controller: Helpers/CadastrarFil/");
+                }
+            },
+            error: function () {
+                var n = noty({ text: 'ERRO AO PROCESSAR REQUISIÇÃO.', timeout: 2000, type: 'error' });
+            }
+        });
+    });
 });
 
 function ValidarCliente() {

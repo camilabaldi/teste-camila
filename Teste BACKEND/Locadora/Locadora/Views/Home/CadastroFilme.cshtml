@@ -1,5 +1,6 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Cadastrar Filme";
 }
 
 <!DOCTYPE html>
@@ -10,8 +11,73 @@
     <title></title>
 </head>
 <body>
-    <div>
-    
+    <div class="content">
+        <form id="FrmCadastroCli" method="post">
+            <header class="content-header">
+                <h2>Cadastrar filme</h2>
+                <ol class="breadcrumb">
+                    <li class="active">Filme</li>
+                </ol>
+            </header>
+            <article class="content">
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Nome</label>
+                                            <input type="text" name="nome" id="nomeFil" class="form-control fil" maxlength="50" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Autor</label>
+                                            <input type="text" name="autor" id="autFil" class="form-control fil" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Ano</label>
+                                            <input type="text" name="ano" id="anoFil" class="form-control fil" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                @*<div class="col-sm-2">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Status</label>
+                                            <select class="form-control" id="status" name="status" readonly>
+                                                <option selected value="0">Ativo</option>
+                                                <option value="1">Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group" style="float:right">
+                                        <div class="col-sm-12">
+                                            <a class="btn btn_cancelar" id="btn_cancelar" style="background-color: #dfdcd8;margin-right:15px" href="@Url.Action("Index","Home")"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancelar</a>
+                                            <a class="btn btn-success" id="btn_salvarFil"><i class="glyphicon glyphicon-ok"></i>&nbsp; Salvar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </form>
     </div>
 </body>
 </html>
