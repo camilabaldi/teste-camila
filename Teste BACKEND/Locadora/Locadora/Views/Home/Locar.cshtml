@@ -1,5 +1,6 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Locar";
 }
 
 <!DOCTYPE html>
@@ -10,8 +11,74 @@
     <title></title>
 </head>
 <body>
-    <div>
-    
+    <div class="content">
+        <form id="FrmLocar" method="post">
+            <header class="content-header">
+                <h2>Locar Filme</h2>
+                <ol class="breadcrumb">
+                    <li class="active">Locar</li>
+                </ol>
+            </header>
+            <article class="content">
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Cliente</label>
+                                            <select class="form-control" id="cli" name="cli" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Filme</label>
+                                            <select class="form-control" id="fil" name="fil" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Data</label>
+                                            <input type="text" name="data" id="data" class="form-control" required readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>Data Devolução</label>
+                                            <input type="text" name="dataDev" id="dataDev" class="form-control dt" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group" style="float:right">
+                                        <div class="col-sm-12">
+                                            <a class="btn btn_cancelar" id="btn_cancelar" style="background-color: #dfdcd8;margin-right:15px" href="@Url.Action("Index","Home")"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancelar</a>
+                                            <a class="btn btn-success" id="btn_salvarLoc"><i class="glyphicon glyphicon-ok"></i>&nbsp; Salvar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </form>
     </div>
 </body>
 </html>

@@ -8,17 +8,19 @@ CADASTROS:
 AÇÕES(tb_Locacao):
 
 	-locar um filme[**]
-	-devolução do filme (table locacao c/btn para devolver)[***]
+	-devolução do filme (table locacao c/btn para devolver status = 1)[***]
 
 ----------------------------
 
 [OK]- *cliente não pode se repetir (na hora de criar verificar o nome e o cpf e ver se ja é existente)[ValidarCliente] 
 
-- na tabela de visualizações não ira poder excluir registros diversos
+[OK]- na tabela de visualizações não ira poder excluir registros diversos
 
-- ** menu "locar" não trazer os filmes que estão com status Inativos
+[OK]- ** menu "locar" não trazer os filmes que estão com status Inativos
 
-- *** mostrar o tempo de atraso em que o objeto se encontra
+[OK] *** mostrar o tempo de atraso em que o objeto se encontra
+
+[OK]-alter table nos tipos dates para varchar(12)
 
 AZURE------------------------------
 
@@ -33,11 +35,10 @@ NOME: SQLtest
 USUARIO: camila_teste
 SENHA: Powerfull@1331
 
+[SE DER EXCEPTION NA CONEXÃO É PORQUE O IP NÃO ESTA CONFIGURADO NO PORTAL AZURE PARA ACESSAR A BASE DE DADOS]
 ----------------------------------------------------------------------------------
 
 https://localhost:44341/
 
 
 ----------------------------------
-
-    

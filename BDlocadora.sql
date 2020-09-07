@@ -28,8 +28,9 @@ create table Locacao (
 	idLoc int NOT NULL identity(1,1),
 	idClie int,
 	idFilm int,
-	dtLocado date,
-	dtDevolucao date,
+	dtLocado varchar(12),
+	dtDevolucao varchar(12),
+	status bit,
     
     primary key (idLoc)
 );
